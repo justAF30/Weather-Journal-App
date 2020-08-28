@@ -40,7 +40,6 @@ app.get("/all", sendData);
 // callback sendData func
 function sendData(request, response) {
   response.send(projectData);
-  projectData = [];
 }
 
 // post request
@@ -53,5 +52,5 @@ function addData(req, res) {
     temp: req.body.temp,
     content: req.body.content,
   };
-  projectData.push(newEntry);
+  projectData = newEntry;
 }

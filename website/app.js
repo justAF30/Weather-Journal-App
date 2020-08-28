@@ -5,8 +5,8 @@ let d = new Date();
 let newDate = d.getMonth() + "." + d.getDate() + "." + d.getFullYear();
 
 // Personal API key and link
-let apiKey = "&appid=e77b20507bf871524d9badcada90330a";
-let baseUrl = "http://api.openweathermap.org/data/2.5/weather?zip=";
+const apiKey = "&appid=e77b20507bf871524d9badcada90330a&units=imperial";
+const baseUrl = "http://api.openweathermap.org/data/2.5/weather?zip=";
 
 // Event Listener
 document.getElementById("generate").addEventListener("click", performAction);
@@ -46,6 +46,7 @@ const postData = async (url = "", data = {}) => {
     credentials: "same-origin",
     headers: {
       "Content-Type": "application/json",
+      Accept: "application/json",
     },
     body: JSON.stringify(data),
   });
@@ -75,3 +76,20 @@ const updateUI = async () => {
     console.log("error", error);
   }
 };
+
+// It is your(Udacity) version, but this not worked, so I did not change this part
+
+// const updateUI = async () => {
+//   const request = await fetch("/all");
+
+//   try {
+//     const allData = await request.json();
+//     document.getElementById("date").innerHTML = `Date: ${allData.date}`;
+//     document.getElementById("temp").innerHTML = `Temperature: ${allData.temp}`;
+//     document.getElementById(
+//       "content"
+//     ).innerHTML = `I am feeling: ${allData.content}`;
+//   } catch (error) {
+//     console.log("error", error);
+//   }
+// };
