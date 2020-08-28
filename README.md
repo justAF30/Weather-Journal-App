@@ -6,7 +6,6 @@ Udacity Nanodegree program - Weather-Journal-App Project
 
 # Description
 
-This is a basic landing page project that uses HTML, CSS, and Javascript.
 This is a simple Weather Journal App that uses HTML, CSS, JavaScript, NodeJS and Express
 
 # To view project
